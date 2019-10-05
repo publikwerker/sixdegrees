@@ -13,10 +13,11 @@ fmt.Fprint(w, "Welcome!\n")
 func Converter(i int)(int){
 	return i
 }
-func Sequence(w http.ResponseWriter, r *http.Request, ps httprouter.Params)(int){
-	iterations, err := strconv.Atoi(ps.ByName("iterations"))
-	sendBack := Converter(iterations)
-	return sendBack
+func Sequence(w http.ResponseWriter, r *http.Request, ps httprouter.Params){
+	if iterations, err := strconv.Atoi(ps.ByName("iterations")); err == nil {
+		var sendBack int = Converter(iterations)
+		fmt.Fprint(w, sendBack)
+	}
 }
 func main() {
 router := httprouter.New()
