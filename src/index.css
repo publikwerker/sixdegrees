@@ -2,15 +2,34 @@ body {
   height: 100vh;
   box-sizing: border-box;
   align-items: center;
+  text-align: center;
   justify-content: center;
   position: relative;
-  background-color: lightgray;
+  background-color: #dddddd;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.button {
+  background-color: #fff;
+  color: #111;
+  padding: .2rem 2rem;
+  text-align: center;
+  font-size: calc(.4rem + 2vmin);
+  border: 1px solid #333333;
+  border-radius: 1.5rem;
+  margin: 0 auto;
+}
+
+.button:hover {
+  border-radius: 1.5rem;
+  box-shadow: 0 .3rem .5rem 0 rgba(#555555, 0.24), 0 .5rem 2rem 0 rgba(#555555, 0.19);
+  -moz-box-shadow: 0 .3rem .5rem 0 rgba(#555555, 0.24), 0 .5rem 2rem 0 rgba(#555555, 0.19);
+  -webkit-box-shadow: 0 .3rem .5rem 0 rgba(#555555, 0.24), 0 .5rem 2rem 0 rgba(#555555, 0.19);
 }
 
 code {
@@ -23,16 +42,24 @@ html {
   font-size: 62.5%;
 }
 
-.App {
-  text-align: center;
+.input {
+    background-color: #fff;
+    color: #111;
+    padding: .2rem;
+    text-align: center;
+    font-size: calc(.4rem + 2vmin);
+    border: none;
+    border-radius: 1.5rem;
+    display: block;
+    margin: 1rem auto;
 }
-
 .App-header {
-  background-color: #282c34;
+  background-color: #444444;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
+  padding: 1rem;
 }
