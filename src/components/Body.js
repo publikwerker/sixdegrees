@@ -1,4 +1,5 @@
 import React from 'react';
+import Sequencer from '../utils/Sequencer';
 
 export default class Body extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class Body extends React.Component {
   
   setError = (error) => {
     console.log("setError ran");
+    console.log(error);
     this.setState({
       iterations: 0,
       sequence: [],
@@ -27,6 +29,7 @@ export default class Body extends React.Component {
         error: null,
       })
     } catch (error) {
+      console.log(error);
       this.setError(error.message);
     }
   }
@@ -36,12 +39,30 @@ export default class Body extends React.Component {
       event.preventDefault();
       this.getSequence(this.state.iterations);
     } catch (error) {
+      console.log(error);
       this.setError(error.message);
     }
   }
 
   getSequence = async (number) => {
     console.log(number);
+    try {
+      await Sequencer(number, async (error, sequence) => {
+        if (error) {
+          console.log(error);
+          await this.setError(error);
+        } else {
+          await this.setState({
+            iterations: 0,
+            sequence,
+            error: null,
+          })
+        }
+      });
+    } catch (error){
+      console.log(error);
+      this.setError(error);
+    }
   }
 
   render () {
