@@ -1,5 +1,6 @@
 import React from 'react';
 import Sequencer from '../utils/Sequencer';
+import Display from './Display';
 
 export default class Body extends React.Component {
   constructor(props) {
@@ -83,6 +84,7 @@ export default class Body extends React.Component {
           </label>
           <input type="submit" className="button" value="Submit" />
         </form>
+        <Display value={this.state.sequence} />
       </div>
     )
   }
